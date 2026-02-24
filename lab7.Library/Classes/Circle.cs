@@ -1,0 +1,26 @@
+﻿using System.Windows;
+using System.Windows.Media;
+
+namespace lab7.Library.Classes
+{
+    public class Circle : Figure
+    {
+        public double Radius { get; set; }
+
+        public Circle(double x, double y, double radius) : base(x, y)
+        {
+            Radius = radius;
+        }
+
+        public override void Draw(DrawingContext dc)
+        {
+            dc.DrawEllipse(Color, new Pen(Brushes.Black, 1),
+                new Point(x + Radius, y + Radius), Radius, Radius);
+        }
+
+        public void ChangeRadius(double newRadius)
+        {
+            if (newRadius > 0) Radius = newRadius;
+        }
+    }
+}
