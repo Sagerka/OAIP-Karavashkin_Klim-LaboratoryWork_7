@@ -1,39 +1,61 @@
 ﻿<Window x:Class="lab7.App.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Лаба 7. Каравашкин Клим 4233" Height="600" Width="900" Loaded="Window_Loaded">
+        Title="Лаба 7. Каравашкин Клим 4233" Height="700" Width="1000" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="280"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0" Margin="10">
-            <TextBlock Text="X:"/>
-            <TextBox x:Name="TxtX" Margin="0,0,0,5" Text="50"/>
-            <TextBlock Text="Y:"/>
-            <TextBox x:Name="TxtY" Margin="0,0,0,5" Text="50"/>
-            <TextBlock Text="Ширина/Радиус:"/>
-            <TextBox x:Name="TxtSize" Margin="0,0,0,5" Text="100"/>
-            <TextBlock Text="Высота:"/>
-            <TextBox x:Name="TxtHeight" Margin="0,0,0,10" Text="100"/>
+        <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="10">
+                <TextBlock Text="=== КООРДИНАТЫ ===" FontWeight="Bold" Margin="0,0,0,5"/>
+                <TextBlock Text="X:"/>
+                <TextBox x:Name="TxtX" Margin="0,0,0,5" Text="50"/>
+                <TextBlock Text="Y:"/>
+                <TextBox x:Name="TxtY" Margin="0,0,0,5" Text="50"/>
+                <TextBlock Text="Ширина/Радиус:"/>
+                <TextBox x:Name="TxtSize" Margin="0,0,0,5" Text="100"/>
+                <TextBlock Text="Высота:"/>
+                <TextBox x:Name="TxtHeight" Margin="0,0,0,10" Text="100"/>
 
-            <Button Content="Прямоугольник" Click="BtnAddRectangle_Click" Margin="0,0,0,3"/>
-            <Button Content="Квадрат" Click="BtnAddSquare_Click" Margin="0,0,0,3"/>
-            <Button Content="Эллипс" Click="BtnAddEllipse_Click" Margin="0,0,0,3"/>
-            <Button Content="Окружность" Click="BtnAddCircle_Click" Margin="0,0,0,10"/>
+                <TextBlock Text="=== ДОБАВИТЬ ФИГУРУ ===" FontWeight="Bold" Margin="0,0,0,5"/>
+                <Button Content="Прямоугольник" Click="BtnAddRectangle_Click" Margin="0,0,0,3"/>
+                <Button Content="Квадрат" Click="BtnAddSquare_Click" Margin="0,0,0,3"/>
+                <Button Content="Эллипс" Click="BtnAddEllipse_Click" Margin="0,0,0,3"/>
+                <Button Content="Окружность" Click="BtnAddCircle_Click" Margin="0,0,0,3"/>
+                <Button Content="Треугольник" Click="BtnAddTriangle_Click" Margin="0,0,0,3"/>
+                <Button Content="Многоугольник" Click="BtnAddPolygon_Click" Margin="0,0,0,3"/>
+                <Button Content="Сложная фигура" Click="BtnAddComplex_Click" Margin="0,0,0,10" Background="#FFFFE0A0"/>
 
-            <ListBox x:Name="LstFigures" Height="100" Margin="0,0,0,5"/>
-            <Button Content="Удалить" Click="BtnDelete_Click" Margin="0,0,0,5" Background="#FFDDA0A0"/>
+                <TextBlock Text="=== СПИСОК ФИГУР ===" FontWeight="Bold" Margin="0,0,0,5"/>
+                <ListBox x:Name="LstFigures" Height="100" Margin="0,0,0,5"/>
 
-            <TextBox x:Name="TxtNewRadius" Margin="0,0,0,3" Text="Новый радиус"/>
+                <TextBlock Text="=== УПРАВЛЕНИЕ ===" FontWeight="Bold" Margin="0,0,0,5"/>
+                <Button Content="Удалить" Click="BtnDelete_Click" Margin="0,0,0,5" Background="#FFDDA0A0"/>
+                <Button Content="Очистить всё" Click="BtnClearAll_Click" Margin="0,0,0,5"/>
+                <TextBlock Text="Новый радиус:" Margin="0,5,0,0"/>
+                <TextBox x:Name="TxtNewRadius" Margin="0,0,0,3"/>
+                <Button Content="Изменить радиус круга" Click="BtnChangeRadius_Click" Margin="0,0,0,5"/>
 
-            <Button Content="Изменить радиус круга" Click="BtnChangeRadius_Click" Margin="0,0,0,10"/>
-            <Button Content="Очистить всё" Click="BtnClearAll_Click" Margin="0,0,0,5"/>
-            <Button Content="Инструкция!!!" Click="BtnHelp_Click" Background="#FFA0DDA0"/>
-        </StackPanel>
+                <TextBlock Text="Новая ширина:" Margin="0,5,0,0"/>
+                <TextBox x:Name="TxtNewWidth" Margin="0,0,0,3"/>
+                <TextBlock Text="Новая высота:" Margin="0,5,0,0"/>
+                <TextBox x:Name="TxtNewHeight" Margin="0,0,0,3"/>
+                <Button Content="Изменить размер прямоугольника" Click="BtnResizeRectangle_Click" Margin="0,0,0,5"/>
 
-        <Border Grid.Column="1" Margin="10" BorderBrush="Gray" BorderThickness="1">
+                <TextBlock Text="Перемещение (dx, dy):" Margin="0,5,0,0"/>
+                <TextBox x:Name="TxtDx" Margin="0,0,0,3" Text="10"/>
+                <TextBox x:Name="TxtDy" Margin="0,0,0,3" Text="10"/>
+                <Button Content="Переместить фигуру" Click="BtnMoveFigure_Click" Margin="0,0,0,5" Background="#FFA0DDA0"/>
+
+                
+                <Button Content="Инструкция!!!" Click="BtnHelp_Click" Background="#FFA0DDA0"/>
+            </StackPanel>
+        </ScrollViewer>
+
+        <Border Grid.Column="1" Margin="10" BorderBrush="Gray" BorderThickness="1" Background="White">
             <Image x:Name="DrawingImage" Stretch="Uniform"/>
         </Border>
     </Grid>

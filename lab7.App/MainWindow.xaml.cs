@@ -4,6 +4,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Controls;
 using lab7.Library.Classes;
+using System.Collections.Generic;
 
 namespace lab7.App
 {
@@ -21,6 +22,9 @@ namespace lab7.App
             if (width <= 0) width = 800;
             if (height <= 0) height = 400;
 
+            ShapeContainer.CanvasWidth = width;
+            ShapeContainer.CanvasHeight = height;
+
             _renderTarget = new RenderTargetBitmap(width, height, 96, 96, PixelFormats.Pbgra32);
             DrawingImage.Source = _renderTarget;
             Redraw();
@@ -31,7 +35,13 @@ namespace lab7.App
             if (_renderTarget == null) return;
             var visual = new DrawingVisual();
             using (var dc = visual.RenderOpen())
-                foreach (var fig in ShapeContainer.FigureList) fig.Draw(dc);
+            {
+                dc.DrawRectangle(null, new Pen(Brushes.Red, 1),
+                    new Rect(0, 0, ShapeContainer.CanvasWidth, ShapeContainer.CanvasHeight));
+
+                foreach (var fig in ShapeContainer.FigureList)
+                    fig.Draw(dc);
+            }
             _renderTarget.Clear();
             _renderTarget.Render(visual);
             DrawingImage.Source = _renderTarget;
@@ -44,7 +54,7 @@ namespace lab7.App
             for (int i = 0; i < ShapeContainer.FigureList.Count; i++)
             {
                 var fig = ShapeContainer.FigureList[i];
-                LstFigures.Items.Add($"#{i + 1} {fig.GetType().Name} ({fig.x}, {fig.y})");
+                LstFigures.Items.Add($"#{i + 1} {fig.GetType().Name} ({fig.x:F1}, {fig.y:F1})");
             }
         }
 
@@ -54,18 +64,86 @@ namespace lab7.App
             catch { return 0; }
         }
 
+        
         private void BtnAddRectangle_Click(object s, RoutedEventArgs e)
-        { ShapeContainer.AddFigure(new Rectangle1(GetVal(TxtX), GetVal(TxtY), GetVal(TxtSize), GetVal(TxtHeight))); Redraw(); }
+        {
+            double x = Math.Max(0, Math.Min(GetVal(TxtX), ShapeContainer.CanvasWidth - 1));
+            double y = Math.Max(0, Math.Min(GetVal(TxtY), ShapeContainer.CanvasHeight - 1));
+            double w = Math.Max(1, Math.Min(GetVal(TxtSize), ShapeContainer.CanvasWidth - x));
+            double h = Math.Max(1, Math.Min(GetVal(TxtHeight), ShapeContainer.CanvasHeight - y));
+            ShapeContainer.AddFigure(new Rectangle1(x, y, w, h));
+            Redraw();
+        }
 
         private void BtnAddSquare_Click(object s, RoutedEventArgs e)
-        { ShapeContainer.AddFigure(new Square(GetVal(TxtX), GetVal(TxtY), GetVal(TxtSize))); Redraw(); }
+        {
+            double x = Math.Max(0, Math.Min(GetVal(TxtX), ShapeContainer.CanvasWidth - 1));
+            double y = Math.Max(0, Math.Min(GetVal(TxtY), ShapeContainer.CanvasHeight - 1));
+            double side = Math.Max(1, Math.Min(GetVal(TxtSize), Math.Min(ShapeContainer.CanvasWidth - x, ShapeContainer.CanvasHeight - y)));
+            ShapeContainer.AddFigure(new Square(x, y, side));
+            Redraw();
+        }
 
         private void BtnAddEllipse_Click(object s, RoutedEventArgs e)
-        { ShapeContainer.AddFigure(new Ellipse1(GetVal(TxtX), GetVal(TxtY), GetVal(TxtSize), GetVal(TxtHeight))); Redraw(); }
+        {
+            double x = Math.Max(0, Math.Min(GetVal(TxtX), ShapeContainer.CanvasWidth - 1));
+            double y = Math.Max(0, Math.Min(GetVal(TxtY), ShapeContainer.CanvasHeight - 1));
+            double w = Math.Max(1, Math.Min(GetVal(TxtSize), ShapeContainer.CanvasWidth - x));
+            double h = Math.Max(1, Math.Min(GetVal(TxtHeight), ShapeContainer.CanvasHeight - y));
+            ShapeContainer.AddFigure(new Ellipse1(x, y, w, h));
+            Redraw();
+        }
 
         private void BtnAddCircle_Click(object s, RoutedEventArgs e)
-        { ShapeContainer.AddFigure(new Circle(GetVal(TxtX), GetVal(TxtY), GetVal(TxtSize))); Redraw(); }
+        {
+            double x = Math.Max(0, Math.Min(GetVal(TxtX), ShapeContainer.CanvasWidth - 1));
+            double y = Math.Max(0, Math.Min(GetVal(TxtY), ShapeContainer.CanvasHeight - 1));
 
+           
+            double maxRadius = Math.Min(ShapeContainer.CanvasWidth - x, ShapeContainer.CanvasHeight - y) / 2;
+            double r = Math.Max(1, Math.Min(GetVal(TxtSize), maxRadius));
+
+            ShapeContainer.AddFigure(new Circle(x, y, r));
+            Redraw();
+        }
+
+        private void BtnAddTriangle_Click(object s, RoutedEventArgs e)
+        {
+            double x = Math.Max(0, Math.Min(GetVal(TxtX), ShapeContainer.CanvasWidth - 1));
+            double y = Math.Max(0, Math.Min(GetVal(TxtY), ShapeContainer.CanvasHeight - 1));
+            double w = Math.Max(1, Math.Min(GetVal(TxtSize), ShapeContainer.CanvasWidth - x));
+            double h = Math.Max(1, Math.Min(GetVal(TxtHeight), ShapeContainer.CanvasHeight - y));
+            ShapeContainer.AddFigure(new Triangle(x, y, w, h));
+            Redraw();
+        }
+
+        private void BtnAddPolygon_Click(object s, RoutedEventArgs e)
+        {
+            var points = new List<Point>
+            {
+                new Point(0, 50),
+                new Point(30, 0),
+                new Point(80, 0),
+                new Point(100, 50),
+                new Point(50, 100)
+            };
+            double x = Math.Max(0, Math.Min(GetVal(TxtX), ShapeContainer.CanvasWidth - 1));
+            double y = Math.Max(0, Math.Min(GetVal(TxtY), ShapeContainer.CanvasHeight - 1));
+            ShapeContainer.AddFigure(new Polygon1(x, y, points));
+            Redraw();
+        }
+
+        private void BtnAddComplex_Click(object s, RoutedEventArgs e)
+        {
+            double x = Math.Max(0, Math.Min(GetVal(TxtX), ShapeContainer.CanvasWidth - 1));
+            double y = Math.Max(0, Math.Min(GetVal(TxtY), ShapeContainer.CanvasHeight - 1));
+            double w = Math.Max(50, Math.Min(GetVal(TxtSize), ShapeContainer.CanvasWidth - x));
+            double h = Math.Max(50, Math.Min(GetVal(TxtHeight), ShapeContainer.CanvasHeight - y));
+            ShapeContainer.AddFigure(new ComplexFigure(x, y, w, h));
+            Redraw();
+        }
+
+       
         private void BtnDelete_Click(object s, RoutedEventArgs e)
         {
             if (LstFigures.SelectedIndex >= 0 && LstFigures.SelectedIndex < ShapeContainer.FigureList.Count)
@@ -74,15 +152,71 @@ namespace lab7.App
 
         private void BtnChangeRadius_Click(object s, RoutedEventArgs e)
         {
-            if (TxtNewRadius.Text == "Новый радиус" || string.IsNullOrWhiteSpace(TxtNewRadius.Text))
+            if (string.IsNullOrWhiteSpace(TxtNewRadius.Text))
             {
-                MessageBox.Show("Введите новый радиус", "Внимание",
-                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Введите новый радиус", "Внимание", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
             if (LstFigures.SelectedIndex >= 0 && ShapeContainer.FigureList[LstFigures.SelectedIndex] is Circle c)
-            { c.ChangeRadius(GetVal(TxtNewRadius)); Redraw(); }
+            {
+                double newRadius = GetVal(TxtNewRadius);
+
+                // отрисовка
+                double maxRadiusByWidth = (ShapeContainer.CanvasWidth - c.x) / 2;
+                double maxRadiusByHeight = (ShapeContainer.CanvasHeight - c.y) / 2;
+
+                
+                double maxRadius = Math.Min(maxRadiusByWidth, maxRadiusByHeight);
+
+                
+                newRadius = Math.Max(1, Math.Min(newRadius, maxRadius));
+
+                c.ChangeRadius(newRadius);
+                Redraw();
+            }
+            else
+                MessageBox.Show("Выберите окружность", "Внимание", MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
+
+        private void BtnResizeRectangle_Click(object s, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TxtNewWidth.Text) || string.IsNullOrWhiteSpace(TxtNewHeight.Text))
+            {
+                MessageBox.Show("Введите ширину и высоту", "Внимание", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (LstFigures.SelectedIndex >= 0 && ShapeContainer.FigureList[LstFigures.SelectedIndex] is Rectangle1 r)
+            {
+                double newWidth = GetVal(TxtNewWidth);
+                double newHeight = GetVal(TxtNewHeight);
+
+                double maxWidth = ShapeContainer.CanvasWidth - r.x;
+                double maxHeight = ShapeContainer.CanvasHeight - r.y;
+
+                newWidth = Math.Max(1, Math.Min(newWidth, maxWidth));
+                newHeight = Math.Max(1, Math.Min(newHeight, maxHeight));
+
+                r.Resize(newWidth, newHeight);
+                Redraw();
+            }
+            else
+                MessageBox.Show("Выберите прямоугольник", "Внимание", MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
+
+        private void BtnMoveFigure_Click(object s, RoutedEventArgs e)
+        {
+            if (LstFigures.SelectedIndex < 0)
+            {
+                MessageBox.Show("Выберите фигуру для перемещения", "Внимание", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            double dx = GetVal(TxtDx);
+            double dy = GetVal(TxtDy);
+            ShapeContainer.MoveSelectedFigure(LstFigures.SelectedIndex, dx, dy);
+            Redraw();
         }
 
         private void BtnClearAll_Click(object s, RoutedEventArgs e)
@@ -92,16 +226,18 @@ namespace lab7.App
         {
             MessageBox.Show(
                 "ИНСТРУКЦИЯ:\n\n" +
-                "1. Введите координаты X и Y\n" +
-                "2. Введите размеры (ширина/радиус/высота)\n" +
-                "3. Нажмите кнопку фигуры для добавления\n" +
-                "4. Нажмите на фигуру в списке и нажмите 'Удалить'\n" +
-                "5. Для окружности: сотрите надпись и введите новый радиус и нажмите 'Изменить радиус'\n" +
-                "6. 'Очистить всё' удаляет все фигуры\n\n" +
-                "Можно использовать дробные числа используя '.' или ','",
-                "Справка",
-                MessageBoxButton.OK,
-                MessageBoxImage.Information);
+                "1. Введите координаты X, Y и размеры\n" +
+                "2. Нажмите кнопку фигуры для добавления\n" +
+                "3. Выделите фигуру в списке для управления\n" +
+                "4. 'Удалить' - удаляет выбранную фигуру\n" +
+                "5. 'Изменить радиус' - для окружности\n" +
+                "6. 'Изменить размер' - для прямоугольника\n" +
+                "7. 'Переместить' - сдвиг на dx, dy\n" +
+                "8. 'Сложная фигура' - машина из нескольких частей\n" +
+                "9. 'Очистить всё' удалит все фигуры\n\n" +
+                
+                "Дробные числа: через ',' или '.'",
+                "Справка", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }
