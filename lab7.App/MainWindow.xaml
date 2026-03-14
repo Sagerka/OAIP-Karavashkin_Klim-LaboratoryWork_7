@@ -10,7 +10,7 @@
 
         <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto">
             <StackPanel Margin="10">
-                <TextBlock Text="=== КООРДИНАТЫ ===" FontWeight="Bold" Margin="0,0,0,5"/>
+                <TextBlock Text="КООРДИНАТЫ" FontWeight="Bold" Margin="0,0,0,5"/>
                 <TextBlock Text="X:"/>
                 <TextBox x:Name="TxtX" Margin="0,0,0,5" Text="50"/>
                 <TextBlock Text="Y:"/>
@@ -20,21 +20,22 @@
                 <TextBlock Text="Высота:"/>
                 <TextBox x:Name="TxtHeight" Margin="0,0,0,10" Text="100"/>
 
-                <TextBlock Text="=== ДОБАВИТЬ ФИГУРУ ===" FontWeight="Bold" Margin="0,0,0,5"/>
+                <TextBlock Text="ДОБАВИТЬ ФИГУРУ" FontWeight="Bold" Margin="0,0,0,5"/>
                 <Button Content="Прямоугольник" Click="BtnAddRectangle_Click" Margin="0,0,0,3"/>
                 <Button Content="Квадрат" Click="BtnAddSquare_Click" Margin="0,0,0,3"/>
                 <Button Content="Эллипс" Click="BtnAddEllipse_Click" Margin="0,0,0,3"/>
                 <Button Content="Окружность" Click="BtnAddCircle_Click" Margin="0,0,0,3"/>
                 <Button Content="Треугольник" Click="BtnAddTriangle_Click" Margin="0,0,0,3"/>
                 <Button Content="Многоугольник" Click="BtnAddPolygon_Click" Margin="0,0,0,3"/>
-                <Button Content="Сложная фигура" Click="BtnAddComplex_Click" Margin="0,0,0,10" Background="#FFFFE0A0"/>
+                <Button Content="Сложная фигура" Click="BtnAddComplex_Click" Margin="0,0,0,10" Background="Yellow"/>
 
-                <TextBlock Text="=== СПИСОК ФИГУР ===" FontWeight="Bold" Margin="0,0,0,5"/>
+                <TextBlock Text="СПИСОК ФИГУР" FontWeight="Bold" Margin="0,0,0,5"/>
                 <ListBox x:Name="LstFigures" Height="100" Margin="0,0,0,5"/>
 
-                <TextBlock Text="=== УПРАВЛЕНИЕ ===" FontWeight="Bold" Margin="0,0,0,5"/>
+                
                 <Button Content="Удалить" Click="BtnDelete_Click" Margin="0,0,0,5" Background="#FFDDA0A0"/>
                 <Button Content="Очистить всё" Click="BtnClearAll_Click" Margin="0,0,0,5"/>
+                <TextBlock Text="УПРАВЛЕНИЕ" FontWeight="Bold" Margin="0,0,0,5"/>
                 <TextBlock Text="Новый радиус:" Margin="0,5,0,0"/>
                 <TextBox x:Name="TxtNewRadius" Margin="0,0,0,3"/>
                 <Button Content="Изменить радиус круга" Click="BtnChangeRadius_Click" Margin="0,0,0,5"/>

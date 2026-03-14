@@ -64,44 +64,98 @@ namespace lab7.App
             catch { return 0; }
         }
 
-        
         private void BtnAddRectangle_Click(object s, RoutedEventArgs e)
         {
-            double x = Math.Max(0, Math.Min(GetVal(TxtX), ShapeContainer.CanvasWidth - 1));
-            double y = Math.Max(0, Math.Min(GetVal(TxtY), ShapeContainer.CanvasHeight - 1));
-            double w = Math.Max(1, Math.Min(GetVal(TxtSize), ShapeContainer.CanvasWidth - x));
-            double h = Math.Max(1, Math.Min(GetVal(TxtHeight), ShapeContainer.CanvasHeight - y));
+            double x = GetVal(TxtX);
+            double y = GetVal(TxtY);
+            double w = GetVal(TxtSize);
+            double h = GetVal(TxtHeight);
+
+            if (w > ShapeContainer.CanvasWidth || h > ShapeContainer.CanvasHeight ||
+                x >= ShapeContainer.CanvasWidth || y >= ShapeContainer.CanvasHeight ||
+                x + w <= 0 || y + h <= 0)
+            {
+                MessageBox.Show("Фигура не помещается на холсте!", "Внимание",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            x = Math.Max(0, x);
+            y = Math.Max(0, y);
+            w = Math.Min(w, ShapeContainer.CanvasWidth - x);
+            h = Math.Min(h, ShapeContainer.CanvasHeight - y);
+
             ShapeContainer.AddFigure(new Rectangle1(x, y, w, h));
             Redraw();
         }
 
         private void BtnAddSquare_Click(object s, RoutedEventArgs e)
         {
-            double x = Math.Max(0, Math.Min(GetVal(TxtX), ShapeContainer.CanvasWidth - 1));
-            double y = Math.Max(0, Math.Min(GetVal(TxtY), ShapeContainer.CanvasHeight - 1));
-            double side = Math.Max(1, Math.Min(GetVal(TxtSize), Math.Min(ShapeContainer.CanvasWidth - x, ShapeContainer.CanvasHeight - y)));
+            double x = GetVal(TxtX);
+            double y = GetVal(TxtY);
+            double side = GetVal(TxtSize);
+
+            if (side > ShapeContainer.CanvasWidth || side > ShapeContainer.CanvasHeight ||
+                x >= ShapeContainer.CanvasWidth || y >= ShapeContainer.CanvasHeight ||
+                x + side <= 0 || y + side <= 0)
+            {
+                MessageBox.Show("Фигура не помещается на холсте!", "Внимание",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            x = Math.Max(0, x);
+            y = Math.Max(0, y);
+            side = Math.Min(side, Math.Min(ShapeContainer.CanvasWidth - x, ShapeContainer.CanvasHeight - y));
+
             ShapeContainer.AddFigure(new Square(x, y, side));
             Redraw();
         }
 
         private void BtnAddEllipse_Click(object s, RoutedEventArgs e)
         {
-            double x = Math.Max(0, Math.Min(GetVal(TxtX), ShapeContainer.CanvasWidth - 1));
-            double y = Math.Max(0, Math.Min(GetVal(TxtY), ShapeContainer.CanvasHeight - 1));
-            double w = Math.Max(1, Math.Min(GetVal(TxtSize), ShapeContainer.CanvasWidth - x));
-            double h = Math.Max(1, Math.Min(GetVal(TxtHeight), ShapeContainer.CanvasHeight - y));
+            double x = GetVal(TxtX);
+            double y = GetVal(TxtY);
+            double w = GetVal(TxtSize);
+            double h = GetVal(TxtHeight);
+
+            if (w > ShapeContainer.CanvasWidth || h > ShapeContainer.CanvasHeight ||
+                x >= ShapeContainer.CanvasWidth || y >= ShapeContainer.CanvasHeight ||
+                x + w <= 0 || y + h <= 0)
+            {
+                MessageBox.Show("Фигура не помещается на холсте!", "Внимание",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            x = Math.Max(0, x);
+            y = Math.Max(0, y);
+            w = Math.Min(w, ShapeContainer.CanvasWidth - x);
+            h = Math.Min(h, ShapeContainer.CanvasHeight - y);
+
             ShapeContainer.AddFigure(new Ellipse1(x, y, w, h));
             Redraw();
         }
 
         private void BtnAddCircle_Click(object s, RoutedEventArgs e)
         {
-            double x = Math.Max(0, Math.Min(GetVal(TxtX), ShapeContainer.CanvasWidth - 1));
-            double y = Math.Max(0, Math.Min(GetVal(TxtY), ShapeContainer.CanvasHeight - 1));
+            double x = GetVal(TxtX);
+            double y = GetVal(TxtY);
+            double r = GetVal(TxtSize);
 
-           
+            if (r * 2 > ShapeContainer.CanvasWidth || r * 2 > ShapeContainer.CanvasHeight ||
+                x >= ShapeContainer.CanvasWidth || y >= ShapeContainer.CanvasHeight ||
+                x + r * 2 <= 0 || y + r * 2 <= 0)
+            {
+                MessageBox.Show("Фигура не помещается на холсте!", "Внимание",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            x = Math.Max(0, x);
+            y = Math.Max(0, y);
             double maxRadius = Math.Min(ShapeContainer.CanvasWidth - x, ShapeContainer.CanvasHeight - y) / 2;
-            double r = Math.Max(1, Math.Min(GetVal(TxtSize), maxRadius));
+            r = Math.Min(r, maxRadius);
 
             ShapeContainer.AddFigure(new Circle(x, y, r));
             Redraw();
@@ -109,10 +163,25 @@ namespace lab7.App
 
         private void BtnAddTriangle_Click(object s, RoutedEventArgs e)
         {
-            double x = Math.Max(0, Math.Min(GetVal(TxtX), ShapeContainer.CanvasWidth - 1));
-            double y = Math.Max(0, Math.Min(GetVal(TxtY), ShapeContainer.CanvasHeight - 1));
-            double w = Math.Max(1, Math.Min(GetVal(TxtSize), ShapeContainer.CanvasWidth - x));
-            double h = Math.Max(1, Math.Min(GetVal(TxtHeight), ShapeContainer.CanvasHeight - y));
+            double x = GetVal(TxtX);
+            double y = GetVal(TxtY);
+            double w = GetVal(TxtSize);
+            double h = GetVal(TxtHeight);
+
+            if (w > ShapeContainer.CanvasWidth || h > ShapeContainer.CanvasHeight ||
+                x >= ShapeContainer.CanvasWidth || y >= ShapeContainer.CanvasHeight ||
+                x + w <= 0 || y + h <= 0)
+            {
+                MessageBox.Show("Фигура не помещается на холсте!", "Внимание",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            x = Math.Max(0, x);
+            y = Math.Max(0, y);
+            w = Math.Min(w, ShapeContainer.CanvasWidth - x);
+            h = Math.Min(h, ShapeContainer.CanvasHeight - y);
+
             ShapeContainer.AddFigure(new Triangle(x, y, w, h));
             Redraw();
         }
@@ -127,23 +196,51 @@ namespace lab7.App
                 new Point(100, 50),
                 new Point(50, 100)
             };
-            double x = Math.Max(0, Math.Min(GetVal(TxtX), ShapeContainer.CanvasWidth - 1));
-            double y = Math.Max(0, Math.Min(GetVal(TxtY), ShapeContainer.CanvasHeight - 1));
+
+            double x = GetVal(TxtX);
+            double y = GetVal(TxtY);
+
+            if (100 > ShapeContainer.CanvasWidth || 100 > ShapeContainer.CanvasHeight ||
+                x >= ShapeContainer.CanvasWidth || y >= ShapeContainer.CanvasHeight ||
+                x + 100 <= 0 || y + 100 <= 0)
+            {
+                MessageBox.Show("Фигура не помещается на холсте!", "Внимание",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            x = Math.Max(0, x);
+            y = Math.Max(0, y);
+
             ShapeContainer.AddFigure(new Polygon1(x, y, points));
             Redraw();
         }
 
         private void BtnAddComplex_Click(object s, RoutedEventArgs e)
         {
-            double x = Math.Max(0, Math.Min(GetVal(TxtX), ShapeContainer.CanvasWidth - 1));
-            double y = Math.Max(0, Math.Min(GetVal(TxtY), ShapeContainer.CanvasHeight - 1));
-            double w = Math.Max(50, Math.Min(GetVal(TxtSize), ShapeContainer.CanvasWidth - x));
-            double h = Math.Max(50, Math.Min(GetVal(TxtHeight), ShapeContainer.CanvasHeight - y));
+            double x = GetVal(TxtX);
+            double y = GetVal(TxtY);
+            double w = GetVal(TxtSize);
+            double h = GetVal(TxtHeight);
+
+            if (w > ShapeContainer.CanvasWidth || h > ShapeContainer.CanvasHeight ||
+                x >= ShapeContainer.CanvasWidth || y >= ShapeContainer.CanvasHeight ||
+                x + w <= 0 || y + h <= 0)
+            {
+                MessageBox.Show("Фигура не помещается на холсте!", "Внимание",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            x = Math.Max(0, x);
+            y = Math.Max(0, y);
+            w = Math.Min(w, ShapeContainer.CanvasWidth - x);
+            h = Math.Min(h, ShapeContainer.CanvasHeight - y);
+
             ShapeContainer.AddFigure(new ComplexFigure(x, y, w, h));
             Redraw();
         }
 
-       
         private void BtnDelete_Click(object s, RoutedEventArgs e)
         {
             if (LstFigures.SelectedIndex >= 0 && LstFigures.SelectedIndex < ShapeContainer.FigureList.Count)
@@ -162,14 +259,11 @@ namespace lab7.App
             {
                 double newRadius = GetVal(TxtNewRadius);
 
-                // отрисовка
                 double maxRadiusByWidth = (ShapeContainer.CanvasWidth - c.x) / 2;
                 double maxRadiusByHeight = (ShapeContainer.CanvasHeight - c.y) / 2;
 
-                
                 double maxRadius = Math.Min(maxRadiusByWidth, maxRadiusByHeight);
 
-                
                 newRadius = Math.Max(1, Math.Min(newRadius, maxRadius));
 
                 c.ChangeRadius(newRadius);
@@ -191,6 +285,13 @@ namespace lab7.App
             {
                 double newWidth = GetVal(TxtNewWidth);
                 double newHeight = GetVal(TxtNewHeight);
+
+                if (newWidth > ShapeContainer.CanvasWidth || newHeight > ShapeContainer.CanvasHeight)
+                {
+                    MessageBox.Show("Размер превышает холст!", "Внимание",
+                        MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
 
                 double maxWidth = ShapeContainer.CanvasWidth - r.x;
                 double maxHeight = ShapeContainer.CanvasHeight - r.y;
@@ -233,10 +334,10 @@ namespace lab7.App
                 "5. 'Изменить радиус' - для окружности\n" +
                 "6. 'Изменить размер' - для прямоугольника\n" +
                 "7. 'Переместить' - сдвиг на dx, dy\n" +
-                "8. 'Сложная фигура' - машина из нескольких частей\n" +
+                "8. 'Сложная фигура' - машина\n" +
                 "9. 'Очистить всё' удалит все фигуры\n\n" +
-                
-                "Дробные числа: через ',' или '.'",
+                "9. 'Очистить всё' удалит все фигуры\n\n" +
+                "Дробные числа: ',' или '.'",
                 "Справка", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
