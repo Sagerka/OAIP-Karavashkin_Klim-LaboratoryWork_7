@@ -25,11 +25,6 @@ namespace lab7.Library.Classes
             y += dy;
         }
 
-        public override bool IsWithinBounds(double minX, double minY, double maxX, double maxY)
-        {
-            return x >= minX && y >= minY && x + Width <= maxX && y + Height <= maxY;
-        }
-
         public void Resize(double newWidth, double newHeight)
         {
             if (newWidth > 0) Width = newWidth;

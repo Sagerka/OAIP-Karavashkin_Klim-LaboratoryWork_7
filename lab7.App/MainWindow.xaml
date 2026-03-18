@@ -17,8 +17,43 @@
                 <TextBox x:Name="TxtY" Margin="0,0,0,5" Text="50"/>
                 <TextBlock Text="Ширина/Радиус:"/>
                 <TextBox x:Name="TxtSize" Margin="0,0,0,5" Text="100"/>
-                <TextBlock Text="Высота:"/>
-                <TextBox x:Name="TxtHeight" Margin="0,0,0,10" Text="100"/>
+                <TextBlock Text="Высота (для прямоугольника/эллипса):"/>
+                <TextBox x:Name="TxtHeight" Margin="0,0,0,5" Text="100"/>
+                <TextBlock Text="Число вершин (многоугольник):"/>
+                <TextBox x:Name="TxtVertices" Margin="0,0,0,10" Text="5"/>
+
+                <!-- ВЕРШИНЫ ТРЕУГОЛЬНИКА -->
+                <TextBlock Text="ВЕРШИНЫ ТРЕУГОЛЬНИКА" FontWeight="Bold" Margin="0,0,0,5"/>
+                <TextBlock Text="Вершина 1 (X, Y):"/>
+                <Grid Margin="0,0,0,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="TxtT1X" Grid.Column="0" Text="0"/>
+                    <TextBox x:Name="TxtT1Y" Grid.Column="2" Text="100"/>
+                </Grid>
+                <TextBlock Text="Вершина 2 (X, Y):"/>
+                <Grid Margin="0,0,0,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="TxtT2X" Grid.Column="0" Text="50"/>
+                    <TextBox x:Name="TxtT2Y" Grid.Column="2" Text="0"/>
+                </Grid>
+                <TextBlock Text="Вершина 3 (X, Y):"/>
+                <Grid Margin="0,0,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="TxtT3X" Grid.Column="0" Text="100"/>
+                    <TextBox x:Name="TxtT3Y" Grid.Column="2" Text="100"/>
+                </Grid>
 
                 <TextBlock Text="ДОБАВИТЬ ФИГУРУ" FontWeight="Bold" Margin="0,0,0,5"/>
                 <Button Content="Прямоугольник" Click="BtnAddRectangle_Click" Margin="0,0,0,3"/>
@@ -32,10 +67,10 @@
                 <TextBlock Text="СПИСОК ФИГУР" FontWeight="Bold" Margin="0,0,0,5"/>
                 <ListBox x:Name="LstFigures" Height="100" Margin="0,0,0,5"/>
 
-                
                 <Button Content="Удалить" Click="BtnDelete_Click" Margin="0,0,0,5" Background="#FFDDA0A0"/>
                 <Button Content="Очистить всё" Click="BtnClearAll_Click" Margin="0,0,0,5"/>
-                <TextBlock Text="УПРАВЛЕНИЕ" FontWeight="Bold" Margin="0,0,0,5"/>
+
+                <TextBlock Text="УПРАВЛЕНИЕ" FontWeight="Bold" Margin="0,10,0,5"/>
                 <TextBlock Text="Новый радиус:" Margin="0,5,0,0"/>
                 <TextBox x:Name="TxtNewRadius" Margin="0,0,0,3"/>
                 <Button Content="Изменить радиус круга" Click="BtnChangeRadius_Click" Margin="0,0,0,5"/>
@@ -51,7 +86,6 @@
                 <TextBox x:Name="TxtDy" Margin="0,0,0,3" Text="10"/>
                 <Button Content="Переместить фигуру" Click="BtnMoveFigure_Click" Margin="0,0,0,5" Background="#FFA0DDA0"/>
 
-                
                 <Button Content="Инструкция!!!" Click="BtnHelp_Click" Background="#FFA0DDA0"/>
             </StackPanel>
         </ScrollViewer>

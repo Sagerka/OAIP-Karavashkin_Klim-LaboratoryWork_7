@@ -24,11 +24,6 @@ namespace lab7.Library.Classes
             y += dy;
         }
 
-        public override bool IsWithinBounds(double minX, double minY, double maxX, double maxY)
-        {
-            return x >= minX && y >= minY && x + Radius * 2 <= maxX && y + Radius * 2 <= maxY;
-        }
-
         public void ChangeRadius(double newRadius)
         {
             if (newRadius > 0) Radius = newRadius;

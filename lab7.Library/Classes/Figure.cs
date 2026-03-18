@@ -18,7 +18,5 @@ namespace lab7.Library.Classes
         public abstract void Draw(DrawingContext dc);
 
         public abstract void Move(double dx, double dy);
-
-        public abstract bool IsWithinBounds(double minX, double minY, double maxX, double maxY);
     }
 }

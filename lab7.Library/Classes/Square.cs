@@ -22,10 +22,5 @@ namespace lab7.Library.Classes
             x += dx;
             y += dy;
         }
-
-        public override bool IsWithinBounds(double minX, double minY, double maxX, double maxY)
-        {
-            return x >= minX && y >= minY && x + Side <= maxX && y + Side <= maxY;
-        }
     }
 }
