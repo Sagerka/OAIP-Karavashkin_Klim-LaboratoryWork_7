@@ -25,7 +25,17 @@ namespace lab7.Library.Classes
             y += dy;
         }
 
-        public void Resize(double newWidth, double newHeight)
+        public override double GetWidth()
+        {
+            return Width;
+        }
+
+        public override double GetHeight()
+        {
+            return Height;
+        }
+
+        public virtual void Resize(double newWidth, double newHeight)
         {
             if (newWidth > 0) Width = newWidth;
             if (newHeight > 0) Height = newHeight;

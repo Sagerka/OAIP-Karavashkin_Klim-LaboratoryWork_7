@@ -25,5 +25,15 @@ namespace lab7.Library.Classes
             x += dx;
             y += dy;
         }
+
+        public override double GetWidth()
+        {
+            return Width;
+        }
+
+        public override double GetHeight()
+        {
+            return Height;
+        }
     }
 }

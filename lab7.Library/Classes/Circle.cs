@@ -3,30 +3,29 @@ using System.Windows.Media;
 
 namespace lab7.Library.Classes
 {
-    public class Circle : Figure
+    public class Circle : Ellipse1
     {
-        public double Radius { get; set; }
-
-        public Circle(double x, double y, double radius) : base(x, y)
+        public double Radius
         {
-            Radius = radius;
+            get => Width / 2;
+            set
+            {
+                Width = value * 2;
+                Height = value * 2;
+            }
         }
 
-        public override void Draw(DrawingContext dc)
+        public Circle(double x, double y, double radius)
+            : base(x, y, radius * 2, radius * 2)
         {
-            dc.DrawEllipse(Color, new Pen(Brushes.Black, 2),
-                new Point(x + Radius, y + Radius), Radius, Radius);
-        }
-
-        public override void Move(double dx, double dy)
-        {
-            x += dx;
-            y += dy;
         }
 
         public void ChangeRadius(double newRadius)
         {
-            if (newRadius > 0) Radius = newRadius;
+            if (newRadius > 0)
+            {
+                Radius = newRadius;
+            }
         }
     }
 }

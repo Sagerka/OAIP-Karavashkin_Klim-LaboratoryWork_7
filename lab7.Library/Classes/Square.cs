@@ -3,24 +3,21 @@ using System.Windows.Media;
 
 namespace lab7.Library.Classes
 {
-    public class Square : Figure
+    public class Square : Rectangle1
     {
-        public double Side { get; set; }
-
-        public Square(double x, double y, double side) : base(x, y)
+        public Square(double x, double y, double side)
+            : base(x, y, side, side)
         {
-            Side = side;
         }
 
-        public override void Draw(DrawingContext dc)
+        public override void Resize(double newWidth, double newHeight)
         {
-            dc.DrawRectangle(Color, new Pen(Brushes.Black, 2), new Rect(x, y, Side, Side));
-        }
-
-        public override void Move(double dx, double dy)
-        {
-            x += dx;
-            y += dy;
+            double side = System.Math.Max(newWidth, newHeight);
+            if (side > 0)
+            {
+                Width = side;
+                Height = side;
+            }
         }
     }
 }

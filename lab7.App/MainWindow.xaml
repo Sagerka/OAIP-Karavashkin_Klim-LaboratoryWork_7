@@ -1,7 +1,7 @@
 ﻿<Window x:Class="lab7.App.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Лаба 7. Каравашкин Клим 4233" Height="700" Width="1000" Loaded="Window_Loaded">
+        Title="Лаба 7. " Height="700" Width="1000" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="280"/>
@@ -12,17 +12,14 @@
             <StackPanel Margin="10">
                 <TextBlock Text="КООРДИНАТЫ" FontWeight="Bold" Margin="0,0,0,5"/>
                 <TextBlock Text="X:"/>
-                <TextBox x:Name="TxtX" Margin="0,0,0,5" Text="50"/>
+                <TextBox x:Name="TxtX" Margin="0,0,0,5" Text="50" PreviewTextInput="TxtX_PreviewTextInput"/>
                 <TextBlock Text="Y:"/>
-                <TextBox x:Name="TxtY" Margin="0,0,0,5" Text="50"/>
+                <TextBox x:Name="TxtY" Margin="0,0,0,5" Text="50" PreviewTextInput="TxtX_PreviewTextInput"/>
                 <TextBlock Text="Ширина/Радиус:"/>
-                <TextBox x:Name="TxtSize" Margin="0,0,0,5" Text="100"/>
+                <TextBox x:Name="TxtSize" Margin="0,0,0,5" Text="100" PreviewTextInput="TxtX_PreviewTextInput"/>
                 <TextBlock Text="Высота (для прямоугольника/эллипса):"/>
-                <TextBox x:Name="TxtHeight" Margin="0,0,0,5" Text="100"/>
-                <TextBlock Text="Число вершин (многоугольник):"/>
-                <TextBox x:Name="TxtVertices" Margin="0,0,0,10" Text="5"/>
+                <TextBox x:Name="TxtHeight" Margin="0,0,0,5" Text="100" PreviewTextInput="TxtX_PreviewTextInput"/>
 
-                <!-- ВЕРШИНЫ ТРЕУГОЛЬНИКА -->
                 <TextBlock Text="ВЕРШИНЫ ТРЕУГОЛЬНИКА" FontWeight="Bold" Margin="0,0,0,5"/>
                 <TextBlock Text="Вершина 1 (X, Y):"/>
                 <Grid Margin="0,0,0,5">
@@ -31,8 +28,8 @@
                         <ColumnDefinition Width="5"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBox x:Name="TxtT1X" Grid.Column="0" Text="0"/>
-                    <TextBox x:Name="TxtT1Y" Grid.Column="2" Text="100"/>
+                    <TextBox x:Name="TxtT1X" Grid.Column="0" Text="0" PreviewTextInput="TxtX_PreviewTextInput"/>
+                    <TextBox x:Name="TxtT1Y" Grid.Column="2" Text="100" PreviewTextInput="TxtX_PreviewTextInput"/>
                 </Grid>
                 <TextBlock Text="Вершина 2 (X, Y):"/>
                 <Grid Margin="0,0,0,5">
@@ -41,8 +38,8 @@
                         <ColumnDefinition Width="5"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBox x:Name="TxtT2X" Grid.Column="0" Text="50"/>
-                    <TextBox x:Name="TxtT2Y" Grid.Column="2" Text="0"/>
+                    <TextBox x:Name="TxtT2X" Grid.Column="0" Text="50" PreviewTextInput="TxtX_PreviewTextInput"/>
+                    <TextBox x:Name="TxtT2Y" Grid.Column="2" Text="0" PreviewTextInput="TxtX_PreviewTextInput"/>
                 </Grid>
                 <TextBlock Text="Вершина 3 (X, Y):"/>
                 <Grid Margin="0,0,0,10">
@@ -51,9 +48,17 @@
                         <ColumnDefinition Width="5"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBox x:Name="TxtT3X" Grid.Column="0" Text="100"/>
-                    <TextBox x:Name="TxtT3Y" Grid.Column="2" Text="100"/>
+                    <TextBox x:Name="TxtT3X" Grid.Column="0" Text="100" PreviewTextInput="TxtX_PreviewTextInput"/>
+                    <TextBox x:Name="TxtT3Y" Grid.Column="2" Text="100" PreviewTextInput="TxtX_PreviewTextInput"/>
                 </Grid>
+
+                <TextBlock Text="МНОГОУГОЛЬНИК" FontWeight="Bold" Margin="0,0,0,5"/>
+                <TextBlock Text="x1,y1 x2,y2 x3,y3..." FontSize="11"/>
+                <TextBlock Text="0,50 30,0 80,0 100,50 50,100" FontStyle="Italic" FontSize="11" Margin="0,0,0,5"/>
+                <TextBox x:Name="TxtPolyPoints" Margin="0,0,0,10" 
+                         Text="0,50 30,0 80,0 100,50 50,100" 
+                         Height="80" TextWrapping="Wrap" AcceptsReturn="True"
+                         PreviewTextInput="TxtPolyPoints_PreviewTextInput"/>
 
                 <TextBlock Text="ДОБАВИТЬ ФИГУРУ" FontWeight="Bold" Margin="0,0,0,5"/>
                 <Button Content="Прямоугольник" Click="BtnAddRectangle_Click" Margin="0,0,0,3"/>
@@ -61,7 +66,7 @@
                 <Button Content="Эллипс" Click="BtnAddEllipse_Click" Margin="0,0,0,3"/>
                 <Button Content="Окружность" Click="BtnAddCircle_Click" Margin="0,0,0,3"/>
                 <Button Content="Треугольник" Click="BtnAddTriangle_Click" Margin="0,0,0,3"/>
-                <Button Content="Многоугольник" Click="BtnAddPolygon_Click" Margin="0,0,0,3"/>
+                <Button Content="Многоугольник" Click="BtnAddPolygon_Click" Margin="0,0,0,10" Background="#FFA0DDA0"/>
                 <Button Content="Сложная фигура" Click="BtnAddComplex_Click" Margin="0,0,0,10" Background="Yellow"/>
 
                 <TextBlock Text="СПИСОК ФИГУР" FontWeight="Bold" Margin="0,0,0,5"/>
@@ -72,18 +77,18 @@
 
                 <TextBlock Text="УПРАВЛЕНИЕ" FontWeight="Bold" Margin="0,10,0,5"/>
                 <TextBlock Text="Новый радиус:" Margin="0,5,0,0"/>
-                <TextBox x:Name="TxtNewRadius" Margin="0,0,0,3"/>
+                <TextBox x:Name="TxtNewRadius" Margin="0,0,0,3" PreviewTextInput="TxtX_PreviewTextInput"/>
                 <Button Content="Изменить радиус круга" Click="BtnChangeRadius_Click" Margin="0,0,0,5"/>
 
                 <TextBlock Text="Новая ширина:" Margin="0,5,0,0"/>
-                <TextBox x:Name="TxtNewWidth" Margin="0,0,0,3"/>
+                <TextBox x:Name="TxtNewWidth" Margin="0,0,0,3" PreviewTextInput="TxtX_PreviewTextInput"/>
                 <TextBlock Text="Новая высота:" Margin="0,5,0,0"/>
-                <TextBox x:Name="TxtNewHeight" Margin="0,0,0,3"/>
+                <TextBox x:Name="TxtNewHeight" Margin="0,0,0,3" PreviewTextInput="TxtX_PreviewTextInput"/>
                 <Button Content="Изменить размер прямоугольника" Click="BtnResizeRectangle_Click" Margin="0,0,0,5"/>
 
                 <TextBlock Text="Перемещение (dx, dy):" Margin="0,5,0,0"/>
-                <TextBox x:Name="TxtDx" Margin="0,0,0,3" Text="10"/>
-                <TextBox x:Name="TxtDy" Margin="0,0,0,3" Text="10"/>
+                <TextBox x:Name="TxtDx" Margin="0,0,0,3" Text="10" PreviewTextInput="TxtX_PreviewTextInput"/>
+                <TextBox x:Name="TxtDy" Margin="0,0,0,3" Text="10" PreviewTextInput="TxtX_PreviewTextInput"/>
                 <Button Content="Переместить фигуру" Click="BtnMoveFigure_Click" Margin="0,0,0,5" Background="#FFA0DDA0"/>
 
                 <Button Content="Инструкция!!!" Click="BtnHelp_Click" Background="#FFA0DDA0"/>

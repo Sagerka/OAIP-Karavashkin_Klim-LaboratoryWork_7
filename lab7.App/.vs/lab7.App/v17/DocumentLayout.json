@@ -3,15 +3,39 @@
   "WorkspaceRootPath": "C:\\Users\\CowPl\\source\\repos\\wpflab7\\lab7.App\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DC741250-F20F-4F28-AB2B-855859D34DBB}|lab7.App.csproj|c:\\users\\cowpl\\source\\repos\\wpflab7\\lab7.app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{DC741250-F20F-4F28-AB2B-855859D34DBB}|lab7.App.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DC741250-F20F-4F28-AB2B-855859D34DBB}|lab7.App.csproj|c:\\users\\cowpl\\source\\repos\\wpflab7\\lab7.app\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DC741250-F20F-4F28-AB2B-855859D34DBB}|lab7.App.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{DC741250-F20F-4F28-AB2B-855859D34DBB}|lab7.App.csproj|c:\\users\\cowpl\\source\\repos\\wpflab7\\lab7.app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{DC741250-F20F-4F28-AB2B-855859D34DBB}|lab7.App.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78AC83CC-AB0A-4410-9D54-9CDC246E73E7}|..\\lab7.Library\\lab7.Library.csproj|c:\\users\\cowpl\\source\\repos\\wpflab7\\lab7.library\\classes\\rectangle1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78AC83CC-AB0A-4410-9D54-9CDC246E73E7}|..\\lab7.Library\\lab7.Library.csproj|c:\\users\\cowpl\\source\\repos\\wpflab7\\lab7.library\\classes\\figure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78AC83CC-AB0A-4410-9D54-9CDC246E73E7}|..\\lab7.Library\\lab7.Library.csproj|c:\\users\\cowpl\\source\\repos\\wpflab7\\lab7.library\\classes\\shapecontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{78AC83CC-AB0A-4410-9D54-9CDC246E73E7}|..\\lab7.Library\\lab7.Library.csproj|c:\\users\\cowpl\\source\\repos\\wpflab7\\lab7.library\\classes\\polygon1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78AC83CC-AB0A-4410-9D54-9CDC246E73E7}|..\\lab7.Library\\lab7.Library.csproj|c:\\users\\cowpl\\source\\repos\\wpflab7\\lab7.library\\classes\\internaltriangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78AC83CC-AB0A-4410-9D54-9CDC246E73E7}|..\\lab7.Library\\lab7.Library.csproj|c:\\users\\cowpl\\source\\repos\\wpflab7\\lab7.library\\classes\\complexfigure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78AC83CC-AB0A-4410-9D54-9CDC246E73E7}|..\\lab7.Library\\lab7.Library.csproj|c:\\users\\cowpl\\source\\repos\\wpflab7\\lab7.library\\classes\\circle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78AC83CC-AB0A-4410-9D54-9CDC246E73E7}|..\\lab7.Library\\lab7.Library.csproj|c:\\users\\cowpl\\source\\repos\\wpflab7\\lab7.library\\classes\\ellipse1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78AC83CC-AB0A-4410-9D54-9CDC246E73E7}|..\\lab7.Library\\lab7.Library.csproj|c:\\users\\cowpl\\source\\repos\\wpflab7\\lab7.library\\classes\\square.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{78AC83CC-AB0A-4410-9D54-9CDC246E73E7}|..\\lab7.Library\\lab7.Library.csproj|c:\\users\\cowpl\\source\\repos\\wpflab7\\lab7.library\\classes\\triangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -19,9 +43,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DC741250-F20F-4F28-AB2B-855859D34DBB}|lab7.App.csproj|c:\\users\\cowpl\\source\\repos\\wpflab7\\lab7.app\\lab7.app.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{DC741250-F20F-4F28-AB2B-855859D34DBB}|lab7.App.csproj|solutionrelative:lab7.app.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\CowPl\\source\\repos\\lab7.Library\\Classes\\ShapeContainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\CowPl\\source\\repos\\lab7.Library\\lab7.Library.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
@@ -34,11 +55,115 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "ShapeContainer.cs",
+              "DocumentMoniker": "C:\\Users\\CowPl\\source\\repos\\wpflab7\\lab7.Library\\Classes\\ShapeContainer.cs",
+              "RelativeDocumentMoniker": "..\\lab7.Library\\Classes\\ShapeContainer.cs",
+              "ToolTip": "C:\\Users\\CowPl\\source\\repos\\wpflab7\\lab7.Library\\Classes\\ShapeContainer.cs",
+              "RelativeToolTip": "..\\lab7.Library\\Classes\\ShapeContainer.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAzwDMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T15:45:53.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "InternalTriangle.cs",
+              "DocumentMoniker": "C:\\Users\\CowPl\\source\\repos\\wpflab7\\lab7.Library\\Classes\\InternalTriangle.cs",
+              "RelativeDocumentMoniker": "..\\lab7.Library\\Classes\\InternalTriangle.cs",
+              "ToolTip": "C:\\Users\\CowPl\\source\\repos\\wpflab7\\lab7.Library\\Classes\\InternalTriangle.cs",
+              "RelativeToolTip": "..\\lab7.Library\\Classes\\InternalTriangle.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAYwDMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T15:45:35.16Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ComplexFigure.cs",
+              "DocumentMoniker": "C:\\Users\\CowPl\\source\\repos\\wpflab7\\lab7.Library\\Classes\\ComplexFigure.cs",
+              "RelativeDocumentMoniker": "..\\lab7.Library\\Classes\\ComplexFigure.cs",
+              "ToolTip": "C:\\Users\\CowPl\\source\\repos\\wpflab7\\lab7.Library\\Classes\\ComplexFigure.cs",
+              "RelativeToolTip": "..\\lab7.Library\\Classes\\ComplexFigure.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAYwFcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T15:45:21.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Circle.cs",
+              "DocumentMoniker": "C:\\Users\\CowPl\\source\\repos\\wpflab7\\lab7.Library\\Classes\\Circle.cs",
+              "RelativeDocumentMoniker": "..\\lab7.Library\\Classes\\Circle.cs",
+              "ToolTip": "C:\\Users\\CowPl\\source\\repos\\wpflab7\\lab7.Library\\Classes\\Circle.cs",
+              "RelativeToolTip": "..\\lab7.Library\\Classes\\Circle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T15:45:08.202Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Ellipse1.cs",
+              "DocumentMoniker": "C:\\Users\\CowPl\\source\\repos\\wpflab7\\lab7.Library\\Classes\\Ellipse1.cs",
+              "RelativeDocumentMoniker": "..\\lab7.Library\\Classes\\Ellipse1.cs",
+              "ToolTip": "C:\\Users\\CowPl\\source\\repos\\wpflab7\\lab7.Library\\Classes\\Ellipse1.cs",
+              "RelativeToolTip": "..\\lab7.Library\\Classes\\Ellipse1.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T15:44:50.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Square.cs",
+              "DocumentMoniker": "C:\\Users\\CowPl\\source\\repos\\wpflab7\\lab7.Library\\Classes\\Square.cs",
+              "RelativeDocumentMoniker": "..\\lab7.Library\\Classes\\Square.cs",
+              "ToolTip": "C:\\Users\\CowPl\\source\\repos\\wpflab7\\lab7.Library\\Classes\\Square.cs",
+              "RelativeToolTip": "..\\lab7.Library\\Classes\\Square.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T15:44:41.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Rectangle1.cs",
+              "DocumentMoniker": "C:\\Users\\CowPl\\source\\repos\\wpflab7\\lab7.Library\\Classes\\Rectangle1.cs",
+              "RelativeDocumentMoniker": "..\\lab7.Library\\Classes\\Rectangle1.cs",
+              "ToolTip": "C:\\Users\\CowPl\\source\\repos\\wpflab7\\lab7.Library\\Classes\\Rectangle1.cs",
+              "RelativeToolTip": "..\\lab7.Library\\Classes\\Rectangle1.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAADwvysAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T15:44:32.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Figure.cs",
+              "DocumentMoniker": "C:\\Users\\CowPl\\source\\repos\\wpflab7\\lab7.Library\\Classes\\Figure.cs",
+              "RelativeDocumentMoniker": "..\\lab7.Library\\Classes\\Figure.cs",
+              "ToolTip": "C:\\Users\\CowPl\\source\\repos\\wpflab7\\lab7.Library\\Classes\\Figure.cs",
+              "RelativeToolTip": "..\\lab7.Library\\Classes\\Figure.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T15:43:31.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\CowPl\\source\\repos\\wpflab7\\lab7.App\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
@@ -50,58 +175,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\CowPl\\source\\repos\\wpflab7\\lab7.App\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\CowPl\\source\\repos\\wpflab7\\lab7.App\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCkAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMcBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-23T15:14:02.788Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
               "Title": "Triangle.cs",
               "DocumentMoniker": "C:\\Users\\CowPl\\source\\repos\\wpflab7\\lab7.Library\\Classes\\Triangle.cs",
               "RelativeDocumentMoniker": "..\\lab7.Library\\Classes\\Triangle.cs",
               "ToolTip": "C:\\Users\\CowPl\\source\\repos\\wpflab7\\lab7.Library\\Classes\\Triangle.cs",
               "RelativeToolTip": "..\\lab7.Library\\Classes\\Triangle.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-03T14:52:55.189Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Polygon1.cs",
               "DocumentMoniker": "C:\\Users\\CowPl\\source\\repos\\wpflab7\\lab7.Library\\Classes\\Polygon1.cs",
               "RelativeDocumentMoniker": "..\\lab7.Library\\Classes\\Polygon1.cs",
               "ToolTip": "C:\\Users\\CowPl\\source\\repos\\wpflab7\\lab7.Library\\Classes\\Polygon1.cs",
               "RelativeToolTip": "..\\lab7.Library\\Classes\\Polygon1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAFMAAAAAAAAAAADwv2QAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-03T14:53:28.741Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ShapeContainer.cs",
-              "DocumentMoniker": "C:\\Users\\CowPl\\source\\repos\\lab7.Library\\Classes\\ShapeContainer.cs",
-              "RelativeDocumentMoniker": "..\\..\\lab7.Library\\Classes\\ShapeContainer.cs",
-              "ToolTip": "C:\\Users\\CowPl\\source\\repos\\lab7.Library\\Classes\\ShapeContainer.cs",
-              "RelativeToolTip": "..\\..\\lab7.Library\\Classes\\ShapeContainer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-23T15:26:11.208Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
               "Title": "lab7.App.csproj",
               "DocumentMoniker": "C:\\Users\\CowPl\\source\\repos\\wpflab7\\lab7.App\\lab7.App.csproj",
               "RelativeDocumentMoniker": "lab7.App.csproj",
@@ -113,7 +226,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 13,
               "Title": "lab7.Library.csproj",
               "DocumentMoniker": "C:\\Users\\CowPl\\source\\repos\\lab7.Library\\lab7.Library.csproj",
               "RelativeDocumentMoniker": "..\\..\\lab7.Library\\lab7.Library.csproj",

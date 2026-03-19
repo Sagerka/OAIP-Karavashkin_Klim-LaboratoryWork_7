@@ -22,24 +22,39 @@ namespace lab7.Library.Classes
         public Polygon1(double x, double y, List<Point> points) : base(x, y)
         {
             VertexCount = points.Count;
-            RelativePoints = points;
+            RelativePoints = SortPointsByAngle(points);
             Size = 100;
+        }
+
+        private List<Point> SortPointsByAngle(List<Point> points)
+        {
+            if (points.Count < 3) return points;
+
+            double centerX = points.Average(p => p.X);
+            double centerY = points.Average(p => p.Y);
+
+            var sorted = points.OrderBy(p =>
+            {
+                double angle = System.Math.Atan2(p.Y - centerY, p.X - centerX);
+                return angle;
+            }).ToList();
+
+            return sorted;
         }
 
         private List<Point> CreateRegularPolygon(int vertices, double radius)
         {
             var points = new List<Point>();
-            double angleStep = 2 * Math.PI / vertices;
+            double angleStep = 2 * System.Math.PI / vertices;
 
             for (int i = 0; i < vertices; i++)
             {
-                double angle = i * angleStep - Math.PI / 2;
-                double px = radius * Math.Cos(angle);
-                double py = radius * Math.Sin(angle);
+                double angle = i * angleStep - System.Math.PI / 2;
+                double px = radius * System.Math.Cos(angle);
+                double py = radius * System.Math.Sin(angle);
                 points.Add(new Point(px, py));
             }
 
-            
             double minX = points.Min(p => p.X);
             double minY = points.Min(p => p.Y);
 
@@ -84,29 +99,25 @@ namespace lab7.Library.Classes
             y += dy;
         }
 
-        public void SetScale(double newScale)
-        {
-            if (newScale > 0) Scale = newScale;
-        }
-
-        public double GetWidth()
+        public override double GetWidth()
         {
             if (RelativePoints.Count == 0) return 0;
-
             double minX = RelativePoints.Min(p => p.X);
             double maxX = RelativePoints.Max(p => p.X);
-
             return (maxX - minX) * Scale;
         }
 
-        public double GetHeight()
+        public override double GetHeight()
         {
             if (RelativePoints.Count == 0) return 0;
-
             double minY = RelativePoints.Min(p => p.Y);
             double maxY = RelativePoints.Max(p => p.Y);
-
             return (maxY - minY) * Scale;
+        }
+
+        public void SetScale(double newScale)
+        {
+            if (newScale > 0) Scale = newScale;
         }
     }
 }

@@ -24,34 +24,32 @@ namespace lab7.Library.Classes
             double scaleX = Width / 180.0;
             double scaleY = Height / 150.0;
 
-            
             var body = new Rectangle1(0 * scaleX, 50 * scaleY, 120 * scaleX, 60 * scaleY);
             body.Color = Brushes.SteelBlue;
             Parts.Add(body);
 
-            
             var cabin = new Rectangle1(120 * scaleX, 50 * scaleY, 60 * scaleX, 60 * scaleY);
             cabin.Color = Brushes.IndianRed;
             Parts.Add(cabin);
 
-            
-            Parts.Add(new InternalTriangle(
-                10 * scaleX, 0 * scaleY,
-                new Point(0, 50 * scaleY),      
-                new Point(20 * scaleX, 0),       
-                new Point(40 * scaleX, 50 * scaleY) 
-            ));
+            var roof1Points = new List<Point>
+            {
+                new Point(0, 50 * scaleY),
+                new Point(20 * scaleX, 0),
+                new Point(40 * scaleX, 50 * scaleY)
+            };
+            Parts.Add(new Triangle(10 * scaleX, 0 * scaleY, roof1Points));
 
-            Parts.Add(new InternalTriangle(
-                60 * scaleX, 0 * scaleY,
-                new Point(0, 50 * scaleY),      
-                new Point(20 * scaleX, 0),      
-                new Point(40 * scaleX, 50 * scaleY) 
-            ));
+            var roof2Points = new List<Point>
+            {
+                new Point(0, 50 * scaleY),
+                new Point(20 * scaleX, 0),
+                new Point(40 * scaleX, 50 * scaleY)
+            };
+            Parts.Add(new Triangle(60 * scaleX, 0 * scaleY, roof2Points));
 
-           
-            Parts.Add(new Circle(20 * scaleX, 120 * scaleY, 15 * Math.Min(scaleX, scaleY)));
-            Parts.Add(new Circle(70 * scaleX, 120 * scaleY, 15 * Math.Min(scaleX, scaleY)));
+            Parts.Add(new Circle(20 * scaleX, 120 * scaleY, 15 * System.Math.Min(scaleX, scaleY)));
+            Parts.Add(new Circle(70 * scaleX, 120 * scaleY, 15 * System.Math.Min(scaleX, scaleY)));
         }
 
         public override void Draw(DrawingContext dc)
@@ -75,6 +73,16 @@ namespace lab7.Library.Classes
         {
             x += dx;
             y += dy;
+        }
+
+        public override double GetWidth()
+        {
+            return Width;
+        }
+
+        public override double GetHeight()
+        {
+            return Height;
         }
     }
 }

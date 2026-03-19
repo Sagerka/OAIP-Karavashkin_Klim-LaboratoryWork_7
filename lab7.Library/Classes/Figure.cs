@@ -16,7 +16,8 @@ namespace lab7.Library.Classes
         }
 
         public abstract void Draw(DrawingContext dc);
-
         public abstract void Move(double dx, double dy);
+        public abstract double GetWidth();
+        public abstract double GetHeight();
     }
 }
